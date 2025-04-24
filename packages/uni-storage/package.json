@@ -1,0 +1,48 @@
+{
+  "name": "uni-storage",
+  "version": "1.0.0",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "import": "./dist/index.js",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "import": "./dist/index.cjs",
+        "require": "./dist/index.cjs"
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsdown src/index.ts --config tsdown.config.ts --clean",
+    "dev": "tsdown src/index.ts --config tsdown.config.ts --watch"
+  },
+  "keywords": [
+    "uniapp",
+    "uni-storage"
+  ],
+  "author": "alva-yky",
+  "license": "MIT",
+  "description": "uni-app 数据缓存二次封装，适用于 uni-app Vue3.x 项目",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
+    "@dcloudio/types": "^3.4.15",
+    "typescript": "^5.8.3",
+    "tsdown": "^0.9.5",
+    "crypto-js": "^4.2.0",
+    "uni-tools": "workspace:*"
+  },
+  "dependencies": {
+    "vue": "^3.0.0"
+  }
+}
