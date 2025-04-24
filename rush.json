@@ -331,12 +331,12 @@
    */
   "projects": [
     {
-      "packageName": "uni-storage",
+      "packageName": "@alva-yky/uni-storage",
       "projectFolder": "packages/uni-storage",
       "shouldPublish": true
     },
     {
-      "packageName": "uni-tools",
+      "packageName": "@alva-yky/uni-tools",
       "projectFolder": "packages/uni-tools",
       "shouldPublish": true
     }

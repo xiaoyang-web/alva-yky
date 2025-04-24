@@ -1,5 +1,5 @@
 {
-  "name": "uni-storage",
+  "name": "@alva-yky/uni-storage",
   "version": "1.0.0",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -40,9 +40,12 @@
     "typescript": "^5.8.3",
     "tsdown": "^0.9.5",
     "crypto-js": "^4.2.0",
-    "uni-tools": "workspace:*"
+    "@alva-yky/uni-tools": "workspace:^1.0.0"
   },
   "dependencies": {
     "vue": "^3.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

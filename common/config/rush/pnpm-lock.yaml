@@ -16,6 +16,9 @@ importers:
         specifier: ^3.0.0
         version: 3.5.13(typescript@5.8.3)
     devDependencies:
+      '@alva-yky/uni-tools':
+        specifier: workspace:^1.0.0
+        version: link:../uni-tools
       '@dcloudio/types':
         specifier: ^3.4.15
         version: 3.4.15
@@ -31,9 +34,6 @@ importers:
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
-      uni-tools:
-        specifier: workspace:*
-        version: link:../uni-tools
 
   ../../packages/uni-tools:
     devDependencies:
