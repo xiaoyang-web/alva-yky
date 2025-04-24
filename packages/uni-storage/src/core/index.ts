@@ -1,4 +1,4 @@
-import { isNil, kebabCase } from 'uni-tools';
+import { isNil, kebabCase } from '@alva-yky/uni-tools';
 import type { StorageConfig } from '../interface';
 import { Encryption } from '../encryption';
 import StorageError from '../error';
