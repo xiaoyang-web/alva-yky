@@ -1,6 +1,5 @@
-import { debounce } from './debounce';
-import type { DebouncedFunction, ThrottleOptions } from './types';
-
+import { debounce } from '../debounce';
+import type { DebouncedFunction, ThrottleOptions } from '../types';
 /**
  * 创建一个节流函数，每隔 `wait` 毫秒调用一次 `func`。
  * @param {Function} func 要节流的函数

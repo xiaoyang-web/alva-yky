@@ -1,4 +1,4 @@
-import { kebabCase } from './kebabCase';
+import { kebabCase } from '../kebabCase';
 
 /**
  * 动态生成内联样式，支持字符串、对象和嵌套结构

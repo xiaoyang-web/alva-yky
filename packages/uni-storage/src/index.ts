@@ -1,7 +1,9 @@
 import { inject, type App } from 'vue';
-import type { StorageConfig, StorageInstance } from './interface';
+import type { StorageConfig, StorageInstance } from './types';
 import { UniStorage } from './core';
 import { storageKey } from './symbol';
+export * from './types';
+export * from './core';
 
 const STORAGE_DEFAULT_CONFIG: Readonly<StorageConfig> = Object.freeze({
   expire: 30 * 24 * 60 * 60 * 1000,
@@ -34,5 +36,3 @@ export function useStorage(): UniStorage {
     );
   }
 }
-
-export * from './interface';

@@ -339,6 +339,11 @@
       "packageName": "@alva-yky/uni-tools",
       "projectFolder": "packages/uni-tools",
       "shouldPublish": true
+    },
+    {
+      "packageName": "@alva-yky/uni-pinia-persistedstate",
+      "projectFolder": "packages/uni-pinia-persistedstate",
+      "shouldPublish": true
     }
     // {
     //   /**

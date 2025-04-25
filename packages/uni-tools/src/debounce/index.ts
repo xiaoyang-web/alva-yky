@@ -1,4 +1,4 @@
-import type { DebouncedFunction, DebounceOptions } from './types';
+import type { DebouncedFunction, DebounceOptions } from '../types';
 
 /**
  * 创建一个防抖函数，该函数延迟调用 `func` 直到等待 `wait` 毫秒后。

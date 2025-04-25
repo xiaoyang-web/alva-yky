@@ -1,0 +1,48 @@
+{
+  "name": "@alva-yky/uni-pinia-persistedstate",
+  "version": "1.0.0",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "import": "./dist/index.js",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "import": "./dist/index.cjs",
+        "require": "./dist/index.cjs"
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsdown src/index.ts --config tsdown.config.ts --clean",
+    "dev": "tsdown src/index.ts --config tsdown.config.ts --watch"
+  },
+  "keywords": [
+    "uniapp",
+    "uni-pinia-persistedstate"
+  ],
+  "author": "alva-yky",
+  "license": "MIT",
+  "description": "uni-app pinia 数据持久化插件",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@dcloudio/types": "^3.4.15",
+    "typescript": "^5.8.3",
+    "tsdown": "^0.9.5"
+  },
+  "dependencies": {
+    "pinia": "^2.0.36"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
