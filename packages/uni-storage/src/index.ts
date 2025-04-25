@@ -21,11 +21,11 @@ export function createStorage(config?: Partial<StorageConfig>): StorageInstance 
     get length() {
       return storage.length;
     },
-    clear: storage.clear,
-    getItem: storage.getItem,
-    key: storage.key,
-    removeItem: storage.removeItem,
-    setItem: storage.setItem
+    clear: storage.clear.bind(storage),
+    getItem: storage.getItem.bind(storage),
+    key: storage.key.bind(storage),
+    removeItem: storage.removeItem.bind(storage),
+    setItem: storage.setItem.bind(storage)
   };
 
   return {
