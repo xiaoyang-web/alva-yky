@@ -17,16 +17,27 @@ const STORAGE_DEFAULT_CONFIG: Readonly<StorageConfig> = Object.freeze({
 
 export function createStorage(config?: Partial<StorageConfig>): StorageInstance {
   const storage = new UniStorage({ ...STORAGE_DEFAULT_CONFIG, ...config });
+  const result: StorageInstance = {
+    get length() {
+      return storage.length;
+    },
+    clear: storage.clear,
+    getItem: storage.getItem,
+    key: storage.key,
+    removeItem: storage.removeItem,
+    setItem: storage.setItem
+  };
+
   return {
-    ...storage,
+    ...result,
     install(app: App<Element>) {
-      app.config.globalProperties.$storage = storage;
-      app.provide(storageKey, storage);
+      app.config.globalProperties.$storage = result;
+      app.provide(storageKey, result);
     }
   } as StorageInstance;
 }
 
-export function useStorage(): UniStorage {
+export function useStorage(): StorageInstance {
   const storage = inject(storageKey);
   if (storage) {
     return storage;

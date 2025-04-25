@@ -1,6 +1,3 @@
-import { App } from 'vue';
-import { UniStorage } from '../core';
-
 export interface StorageConfig {
   expire: number;
   prefix: string;
@@ -11,6 +8,11 @@ export interface StorageConfig {
   enableCipher: boolean;
 }
 
-export interface StorageInstance extends UniStorage {
-  install(app: App<Element>): void;
+export interface StorageInstance {
+  get length(): number;
+  clear(): void;
+  getItem(key: string): any;
+  key(index: number): string | null;
+  removeItem(key: string): void;
+  setItem(key: string, value: unknown, expire?: number): void;
 }
