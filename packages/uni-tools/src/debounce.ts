@@ -35,7 +35,6 @@ export function debounce<T extends (...args: any[]) => any>(
     if (lastCallTime === undefined) return true;
     const timeSinceLastCall = time - lastCallTime;
     const timeSinceLastInvoke = time - lastInvokeTime;
-
     return timeSinceLastCall >= wait || (maxing && timeSinceLastInvoke >= maxWait);
   }
 

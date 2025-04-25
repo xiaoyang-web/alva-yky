@@ -7,7 +7,7 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "types": ["@dcloudio/types"],
+    "types": [],
     "rootDir": ".",
     "outDir": "./dist",
     "noEmit": true

@@ -67,7 +67,7 @@ export class UniStorage implements Storage {
     }
   }
 
-  setItem(key: string, value: unknown, expire: number | null | undefined = this.config.expire) {
+  setItem(key: string, value: unknown, expire = this.config.expire) {
     try {
       const now = new Date().getTime();
       const stringData = JSON.stringify({

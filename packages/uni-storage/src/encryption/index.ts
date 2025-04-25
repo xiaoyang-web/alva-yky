@@ -1,8 +1,8 @@
-import StorageError from '../error';
 import { decrypt, encrypt } from 'crypto-js/aes';
 import UTF8, { parse } from 'crypto-js/enc-utf8';
 import ECB from 'crypto-js/mode-ecb';
 import PKCS7 from 'crypto-js/pad-pkcs7';
+import StorageError from '../error';
 
 export class Encryption {
   private readonly key;

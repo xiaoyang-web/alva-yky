@@ -1,6 +1,6 @@
 {
   "name": "@alva-yky/uni-tools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -35,7 +35,6 @@
     "dist"
   ],
   "devDependencies": {
-    "@dcloudio/types": "^3.4.15",
     "typescript": "^5.8.3",
     "tsdown": "^0.9.5"
   },

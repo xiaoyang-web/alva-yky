@@ -13,7 +13,7 @@ const STORAGE_DEFAULT_CONFIG: Readonly<StorageConfig> = Object.freeze({
   enableCipher: false
 });
 
-export function createStorage(config?: StorageConfig) {
+export function createStorage(config?: Partial<StorageConfig>): StorageInstance {
   const storage = new UniStorage({ ...STORAGE_DEFAULT_CONFIG, ...config });
   return {
     ...storage,
@@ -34,3 +34,5 @@ export function useStorage(): UniStorage {
     );
   }
 }
+
+export * from './interface';
