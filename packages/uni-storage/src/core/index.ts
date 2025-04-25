@@ -38,7 +38,7 @@ export class UniStorage implements Storage {
       const storageValue = uni.getStorageSync(this.getStorageKey(key));
       if (isNil(storageValue)) return null;
       const decryptValue = this.config.enableCipher ? this.encipher.decrypt(storageValue) : storageValue;
-      const data = JSON.parse(decryptValue);
+      const data = this.config.enableCipher ? JSON.parse(decryptValue) : decryptValue;
       const { value, expire } = data;
       if (!isNil(expire) && expire < new Date().getTime()) {
         this.removeItem(key);
@@ -46,7 +46,7 @@ export class UniStorage implements Storage {
       }
       return value;
     } catch (error: any) {
-      return new StorageError({ code: 10003, message: error?.message });
+      throw new StorageError({ code: 10003, message: error?.message });
     }
   }
 
@@ -70,12 +70,12 @@ export class UniStorage implements Storage {
   setItem(key: string, value: unknown, expire = this.config.expire) {
     try {
       const now = new Date().getTime();
-      const stringData = JSON.stringify({
+      const data = {
         value,
         time: now,
         expire: !isNil(expire) ? now + expire : null
-      });
-      const stringifyValue = this.config.enableCipher ? this.encipher.encrypt(stringData) : stringData;
+      };
+      const stringifyValue = this.config.enableCipher ? this.encipher.encrypt(JSON.stringify(data)) : data;
       uni.setStorageSync(this.getStorageKey(key), stringifyValue);
     } catch (error: any) {
       throw new StorageError({ code: 10004, message: error?.message });
