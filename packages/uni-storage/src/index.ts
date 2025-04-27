@@ -15,7 +15,9 @@ const STORAGE_DEFAULT_CONFIG: Readonly<StorageConfig> = Object.freeze({
   enableCipher: false
 });
 
-export function createStorage(config?: Partial<StorageConfig>): StorageInstance {
+export function createStorage(
+  config?: Partial<StorageConfig>
+): StorageInstance & { install: (app: App<Element>) => void } {
   const storage = new UniStorage({ ...STORAGE_DEFAULT_CONFIG, ...config });
   const result: StorageInstance = {
     get length() {
@@ -34,7 +36,7 @@ export function createStorage(config?: Partial<StorageConfig>): StorageInstance 
       app.config.globalProperties.$storage = result;
       app.provide(storageKey, result);
     }
-  } as StorageInstance;
+  };
 }
 
 export function useStorage(): StorageInstance {
